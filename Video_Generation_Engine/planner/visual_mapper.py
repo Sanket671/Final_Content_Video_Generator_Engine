@@ -32,6 +32,19 @@ def resolve_visual(scene: dict, product_images: list, image_index: int) -> dict:
 
     # Product image scenes -> use product images when available
     if scene_type in ("product_image", "product_overview"):
+        # Prefer a short stock b-roll clip for product intros when available
+        # Use the overlay text (usually the product name) to pick a keyword
+        keyword = ""
+        if overlay:
+            # take up to two meaningful words from the overlay
+            parts = [p.strip().lower() for p in overlay.split() if p.strip()]
+            keyword = "_".join(parts[:2]) if parts else ""
+
+        if keyword:
+            b = get_stock_broll(keyword)
+            if b:
+                return {"type": "video", "path": b}
+
         if product_images:
             return {"type": "image", "path": product_images[image_index % len(product_images)]}
         return {"type": "solid"}
