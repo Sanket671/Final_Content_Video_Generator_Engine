@@ -1,17 +1,18 @@
-# renderer/stock_broll_manager.py
 import os
 import requests
 from pathlib import Path
 
+# Read Pexels API key if present, but do not raise at import time. That made
+# importing this module fatal when the environment variable was missing.
 PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
-if not PEXELS_API_KEY:
-    raise RuntimeError("PEXELS_API_KEY not set")
 
-BASE_DIR = Path("data/stock_broll")
+# Make the stock b-roll directory module-relative so it works regardless of CWD
+BASE_DIR = Path(__file__).resolve().parents[1] / "data" / "stock_broll"
 BASE_DIR.mkdir(parents=True, exist_ok=True)
 
 PEXELS_URL = "https://api.pexels.com/videos/search"
-BROLL_DIR = Path("data/stock_broll")
+BROLL_DIR = BASE_DIR
+
 
 def get_stock_broll(keyword: str):
     videos = list(BROLL_DIR.glob("*.mp4"))
@@ -19,10 +20,15 @@ def get_stock_broll(keyword: str):
         return None
     return str(videos[hash(keyword) % len(videos)])
 
+
 def get_broll_clip(keyword: str) -> Path:
     """
     Fetches and caches a short vertical-friendly stock video for the keyword.
+    Requires `PEXELS_API_KEY` to be set in the environment.
     """
+    if not PEXELS_API_KEY:
+        raise RuntimeError("PEXELS_API_KEY not set")
+
     keyword_dir = BASE_DIR / keyword
     keyword_dir.mkdir(parents=True, exist_ok=True)
 

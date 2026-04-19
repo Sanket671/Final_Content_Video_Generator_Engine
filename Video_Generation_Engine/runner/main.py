@@ -22,6 +22,7 @@ from renderer.final_concat import concat_scenes
 
 # TTS
 from tts.fish_tts import generate_voiceover_audio
+from planner.visual_mapper import resolve_visual
 
 
 def build_search_query(product: CinematographyProduct) -> str:
@@ -142,41 +143,35 @@ def main():
 
     # 7️⃣ Generate audio
     print("🎙️ Generating TTS audio...")
+    # Preserve scene_id mapping when generating audio files so files
+    # are written as `scene_{scene_id}.wav` and later picked up by the renderer.
     generate_voiceover_audio(
-        [{"text": line.text} for line in vo_output.voiceover]
+        [{"scene_id": int(line.scene_id), "text": line.text} for line in vo_output.voiceover]
     )
 
     # 8️⃣ Render scenes
     print("🎞️ Rendering video scenes...")
     rendered_scenes = []
+    product_images = getattr(product, "images", []) or []
+    image_index = 0
 
     for idx, scene in enumerate(scenes, start=1):
         scene_dict = scene.model_dump()
 
-        # -----------------------------
-        # 🎬 ALL OTHER SCENES → FFMPEG
-        # -----------------------------
-        if scene.scene_id == 1:
-            visual = {
-                "type": "video",
-                "path": scene_dict.get("media_path")
-            }
-        elif scene.scene_id == 4:
-            visual = {
-                "type": "video",
-                "path": video_path
-            }
-        elif scene_dict.get("media_path"):
-            visual = {
-                "type": "image",
-                "path": scene_dict["media_path"]
-            }
+        # Use visual mapper to resolve what to render for non-hook scenes.
+        if scene_dict.get("scene_id") == 1:
+            visual = {"type": "video", "path": scene_dict.get("media_path")}
         else:
-            visual = {"type": "solid"}
+            visual = resolve_visual(scene_dict, product_images, image_index)
+            if visual.get("type") == "image":
+                image_index += 1
 
+        # Use the scene's declared `scene_id` when available so audio files
+        # generated using scene_id names are correctly matched.
+        render_index = int(scene_dict.get("scene_id", idx))
         out = render_scene(
             scene=scene_dict,
-            scene_index=idx,
+            scene_index=render_index,
             visual=visual,
             product=product,
             execute=True
