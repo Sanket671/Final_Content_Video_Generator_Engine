@@ -1,0 +1,4 @@
+groq
+pytrends
+python-dotenv
+markdown

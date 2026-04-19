@@ -1,0 +1,20 @@
+# Python Virtual Environment
+venv/
+.env
+__pycache__/
+*.py[cod]
+
+# Project Specific Data (Audio and Video)
+video_segments/
+outputs/
+data/audio_cache/
+data/stock_broll/
+tmp_img_*.jpg
+output.json
+
+# macOS specific files
+.DS_Store
+
+# Large Model Files (if downloaded locally)
+*.bin
+*.pth

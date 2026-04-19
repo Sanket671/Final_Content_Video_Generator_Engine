@@ -1,0 +1,126 @@
+## Folder Structure
+
+📦Video_Generation_Engine
+ ┣ 📂.git
+ ┃ ┣ 📂hooks
+ ┃ ┃ ┣ 📜applypatch-msg.sample
+ ┃ ┃ ┣ 📜commit-msg.sample
+ ┃ ┃ ┣ 📜fsmonitor-watchman.sample
+ ┃ ┃ ┣ 📜post-update.sample
+ ┃ ┃ ┣ 📜pre-applypatch.sample
+ ┃ ┃ ┣ 📜pre-commit.sample
+ ┃ ┃ ┣ 📜pre-merge-commit.sample
+ ┃ ┃ ┣ 📜pre-push.sample
+ ┃ ┃ ┣ 📜pre-rebase.sample
+ ┃ ┃ ┣ 📜pre-receive.sample
+ ┃ ┃ ┣ 📜prepare-commit-msg.sample
+ ┃ ┃ ┣ 📜push-to-checkout.sample
+ ┃ ┃ ┣ 📜sendemail-validate.sample
+ ┃ ┃ ┗ 📜update.sample
+ ┃ ┣ 📂info
+ ┃ ┃ ┗ 📜exclude
+ ┃ ┣ 📂logs
+ ┃ ┃ ┣ 📂refs
+ ┃ ┃ ┃ ┣ 📂heads
+ ┃ ┃ ┃ ┃ ┗ 📜main
+ ┃ ┃ ┃ ┗ 📂remotes
+ ┃ ┃ ┃ ┃ ┗ 📂origin
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜HEAD
+ ┃ ┃ ┗ 📜HEAD
+ ┃ ┣ 📂objects
+ ┃ ┃ ┣ 📂info
+ ┃ ┃ ┗ 📂pack
+ ┃ ┃ ┃ ┣ 📜pack-8b7427deac07d12a46f6a8345e87c29d518a4480.idx
+ ┃ ┃ ┃ ┣ 📜pack-8b7427deac07d12a46f6a8345e87c29d518a4480.pack
+ ┃ ┃ ┃ ┗ 📜pack-8b7427deac07d12a46f6a8345e87c29d518a4480.rev
+ ┃ ┣ 📂refs
+ ┃ ┃ ┣ 📂heads
+ ┃ ┃ ┃ ┗ 📜main
+ ┃ ┃ ┣ 📂remotes
+ ┃ ┃ ┃ ┗ 📂origin
+ ┃ ┃ ┃ ┃ ┗ 📜HEAD
+ ┃ ┃ ┗ 📂tags
+ ┃ ┣ 📜config
+ ┃ ┣ 📜description
+ ┃ ┣ 📜HEAD
+ ┃ ┣ 📜index
+ ┃ ┗ 📜packed-refs
+ ┣ 📂blender
+ ┃ ┣ 📜render_frames.py
+ ┃ ┗ 📜studio.blend
+ ┣ 📂chains
+ ┃ ┣ 📜scene_planning.py
+ ┃ ┣ 📜script_generation.py
+ ┃ ┣ 📜voiceover_enricher.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂config
+ ┃ ┣ 📜app.yaml
+ ┃ ┣ 📜compliance.yaml
+ ┃ ┣ 📜ffmpeg.yaml
+ ┃ ┣ 📜platforms.yaml
+ ┃ ┗ 📜voices.yaml
+ ┣ 📂data
+ ┃ ┣ 📂products
+ ┃ ┃ ┗ 📜sample_product.json
+ ┃ ┗ 📜video_history.json
+ ┣ 📂defaults
+ ┃ ┣ 📜11750403669rgk61vvori642rmkn1ud2esyfrzsegmemywlwmq5gw5libbbv327zvjjomwuekyim87fu4sloalycwgxz2ccfgf9umnjtercvfwz.webp
+ ┃ ┣ 📜Card_image.png
+ ┃ ┣ 📜default_outro.wav
+ ┃ ┣ 📜end_credits.mp4
+ ┃ ┣ 📜Logo-4-[remix].mp4
+ ┃ ┣ 📜Scene-3.mp4
+ ┃ ┣ 📜Search (1).mp4
+ ┃ ┣ 📜Search.mp4
+ ┃ ┣ 📜search_bar.png
+ ┃ ┣ 📜search_bar.webp
+ ┃ ┣ 📜search_bar_.png
+ ┃ ┣ 📜Showreel-Grid-Mobile-[remix].mp4
+ ┃ ┗ 📜Simple-Dot-[remix].mp4
+ ┣ 📂llm
+ ┃ ┗ 📜groq_client.py
+ ┣ 📂planner
+ ┃ ┣ 📜scene_allocator.py
+ ┃ ┣ 📜timing_calculator.py
+ ┃ ┣ 📜visual_mapper.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂renderer
+ ┃ ┣ 📜blender_scene_renderer.py
+ ┃ ┣ 📜ffmpeg_builder.py
+ ┃ ┣ 📜ffmpeg_scene_renderer.py
+ ┃ ┣ 📜final_concat.py
+ ┃ ┣ 📜frames_to_video.py
+ ┃ ┣ 📜motion_presets.py
+ ┃ ┣ 📜render_pipeline.py
+ ┃ ┣ 📜stock_broll_manager.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂runner
+ ┃ ┣ 📜main.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂schemas
+ ┃ ┣ 📜final_output.py
+ ┃ ┣ 📜product.py
+ ┃ ┣ 📜scene.py
+ ┃ ┣ 📜script.py
+ ┃ ┣ 📜voiceover.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂services
+ ┃ ┗ 📜pexels_service.py
+ ┣ 📂tts
+ ┃ ┣ 📜elevenlabs_tts.py
+ ┃ ┣ 📜fish_tts.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂utils
+ ┃ ┣ 📜overlay_shortener.py
+ ┃ ┗ 📜tts_normalizer.py
+ ┣ 📂validators
+ ┃ ┣ 📜compliance_runner.py
+ ┃ ┣ 📜forbidden_terms.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📜.env
+ ┣ 📜.gitignore
+ ┣ 📜DOCUMENTATION_FULL.md
+ ┣ 📜README.md
+ ┣ 📜requirements.txt
+ ┣ 📜tmp_card.jpg
+ ┗ 📜tmp_product_2..jpeg

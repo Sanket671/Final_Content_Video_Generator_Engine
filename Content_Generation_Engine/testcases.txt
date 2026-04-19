@@ -1,0 +1,90 @@
+!.Reticulo Sports : 
+
+{
+  "company_name": "Reticulo Sports",
+  "industry": "sports performance",
+  "target_audience": "athletes and fitness enthusiasts",
+  "services": "sports performance analytics, recovery technology, athlete training"
+}
+
+-----------------------------------------------------------------------------
+
+1️⃣ Nike (Sports Shoes & Apparel)
+{
+  "company_name": "Nike",
+  "industry": "sports apparel and footwear",
+  "target_audience": "athletes, runners, and sports enthusiasts",
+  "services": "high-performance running shoes, sports apparel, athlete gear"
+}
+
+2️⃣ Adidas (Sportswear)
+{
+  "company_name": "Adidas",
+  "industry": "sportswear and footwear",
+  "target_audience": "football players, runners, and fitness enthusiasts",
+  "services": "sports shoes, football gear, training apparel"
+}
+
+3️⃣ Apple (Technology)
+{
+  "company_name": "Apple",
+  "industry": "consumer technology",
+  "target_audience": "tech enthusiasts and professionals",
+  "services": "smartphones, laptops, wearable devices, digital ecosystem"
+}
+
+4️⃣ Tesla (Electric Vehicles)
+{
+  "company_name": "Tesla",
+  "industry": "electric vehicles and clean energy",
+  "target_audience": "technology enthusiasts and environmentally conscious consumers",
+  "services": "electric vehicles, autonomous driving technology, energy storage solutions"
+}
+
+5️⃣ Amazon (E-commerce)
+{
+  "company_name": "Amazon",
+  "industry": "e-commerce and cloud computing",
+  "target_audience": "online shoppers and businesses",
+  "services": "online marketplace, logistics network, cloud services (AWS)"
+}
+
+6️⃣ Google (Technology & AI)
+{
+  "company_name": "Google",
+  "industry": "internet services and artificial intelligence",
+  "target_audience": "internet users, developers, and businesses",
+  "services": "search engine, cloud computing, artificial intelligence solutions"
+}
+
+7️⃣ Samsung (Electronics)
+{
+  "company_name": "Samsung",
+  "industry": "consumer electronics",
+  "target_audience": "smartphone users and technology enthusiasts",
+  "services": "smartphones, televisions, semiconductors, home electronics"
+}
+
+8️⃣ Netflix (Streaming)
+{
+  "company_name": "Netflix",
+  "industry": "entertainment streaming",
+  "target_audience": "movie lovers and online streaming audiences",
+  "services": "online streaming platform, original movies and series"
+}
+
+9️⃣ McDonald's (Food Chain)
+{
+  "company_name": "McDonald's",
+  "industry": "fast food restaurant",
+  "target_audience": "families, students, and fast-food consumers",
+  "services": "burgers, fast food meals, quick-service dining"
+}
+
+🔟 Red Bull (Energy Drink + Sports Marketing)
+{
+  "company_name": "Red Bull",
+  "industry": "energy drinks and extreme sports marketing",
+  "target_audience": "young adults, gamers, and extreme sports athletes",
+  "services": "energy drinks, sports sponsorships, extreme sports events"
+}
